@@ -27,9 +27,9 @@
 
 ## Full Deployment Instructions
 The steps will do the following with the help of GNU Make:
-	- Deploy the Azure Infrastructure
-	- Build the Docker Image with the Sensors QC App
-	- Deploy the app leveraging Arc/Flux
+- Deploy the Azure Infrastructure
+- Build the Docker Image with the Sensors QC App
+- Deploy the app leveraging Arc/Flux
 
 The steps below will use Azure Shell (shell.azure.com) as the tools required are already pre-installed. This may take 10-20 mins to deploy.
 
