@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Sensors Quality Control</title>
+    </head>
+    <style>
+        body, html {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        .center {
+            margin: auto;
+        }
+    </style>
+    <body>
+        <div class="center">
+            <pre>
+ _____                                 _____ _____
+/  ___|                               |  _  /  __ \
+\ `--.  ___ _ __  ___  ___  _ __ ___  | | | | /  \/
+ `--. \/ _ \ '_ \/ __|/ _ \| '__/ __| | | | | |
+/\__/ /  __/ | | \__ \ (_) | |  \__ \ \ \/' / \__/\
+\____/ \___|_| |_|___/\___/|_|  |___/  \_/\_\\____/
+            </pre>
+        </div>
+        <div class="center">
+            <b>Upload the Sensors Log File:</b>
+            <br><br>
+        </div>
+        <div class="center">
+            <form action = "/qc" method = "post" enctype="multipart/form-data">
+                <input type="file" name="file" />
+                <input type="hidden" name="displaytime" value="false">
+                <input type="hidden" name="captureerror" value="false">
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+        <div class="center">
+            <b style="color:red">{{ message }}</b>
+        </div>
+    </body>
+</html>

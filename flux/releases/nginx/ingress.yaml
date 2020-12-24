@@ -1,0 +1,17 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: ingress
+  namespace: ingress
+spec:
+  releaseName: ingress
+  chart:
+    repository: https://kubernetes.github.io/ingress-nginx
+    name: ingress-nginx
+    version: 3.16.1
+  values:
+    controller:
+      image:
+        digest: ""
+      replicaCount: 2

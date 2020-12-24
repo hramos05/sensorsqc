@@ -1,0 +1,25 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: sensorsqc
+  namespace: sensorsqc
+spec:
+  releaseName: sensorsqc-api
+  chart:
+    git: https://github.com/hramos05/sensorsqc.git
+    path: flux/charts/sensorsqc
+    ref: master
+  values:
+    image:
+      # Please adjust if you uploaded to a different registry
+      repository: acrsensorsqc.azurecr.io/sensorsqc
+      tag: latest
+    replicaCount: 1
+    # Untested, but HPA can be used to scale automatically
+    # autoscaling:
+    #   enabled: true
+    # resources:
+    #   limits:
+    #     cpu: 100m
+    #     memory: 128Mi
